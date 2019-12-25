@@ -2,11 +2,8 @@
 {
 	import flash.text.TextField;
 	import flash.text.TextFormat;
-	import flash.text.GridFitType;
 	import flash.text.AntiAliasType;
 	import flash.text.TextFieldAutoSize;
-	
-	import scaleform.gfx.TextFieldEx;
 	
 	import net.gambiter.FlashUI;
 	import net.gambiter.utils.Align;
@@ -15,6 +12,8 @@
 	
 	public class LabelEx extends UIComponentEx
 	{
+		public static const NAME_FONT:String = "$UniversCondC";
+		
 		private var textField:TextField;
 		
 		private var _text:String;
@@ -46,11 +45,10 @@
 			textField.backgroundColor = 0x000000;
 			
 			textField.embedFonts = true;
-			textField.gridFitType = GridFitType.PIXEL;
 			textField.autoSize = TextFieldAutoSize.LEFT;
 			textField.antiAliasType = AntiAliasType.ADVANCED;
 			
-			textField.defaultTextFormat = new TextFormat("$UniversCondC", 12, 0xFFFFFF, false, false, false, "", "", "left", 0, 0, 0, 0);
+			textField.defaultTextFormat = new TextFormat(NAME_FONT, 12, 0xFFFFFF, false, false, false, "", "", "left", 0, 0, 0, 0);
 			Properties.setShadow(textField, {"distance": 4, "angle": 45, "color": 0x999999, "alpha": 1, "blurX": 4, "blurY": 4, "strength": 1, "quality": 1});
 		}
 		
